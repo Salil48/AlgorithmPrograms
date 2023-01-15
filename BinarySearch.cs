@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlgorithmPrograms
 {
-    class BinarySearch
+    class BinarySearch<T> where T : IComparable
     {
-        public static void BinarySearchWord(List<string> wordList)
+        public static void BinarySearchWord(List<T> wordList)
         {
             //Initialize Local Variables
             int mid, start = 0;
