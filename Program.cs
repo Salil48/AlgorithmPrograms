@@ -3,7 +3,7 @@
     class Program
     {
 
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Algorithm Programs!");
             string flag = "Y";
@@ -13,6 +13,7 @@
                 Console.WriteLine("2.Binary Search the word from wordlist");
                 Console.WriteLine("3.Insertion Sort");
                 Console.WriteLine("4.Bubble Sort");
+                Console.WriteLine("5.Merge sort");
                 Console.WriteLine("Enter the option");
                 int num = Convert.ToInt32(Console.ReadLine());
                 switch (num)
@@ -40,6 +41,11 @@
                         BubbleSort.BubbleSortInArray(arr1);
                         BubbleSort.PrintArray(arr1);
                         break;
+                    case 5:
+                        int[] arr2 = { 32, 12, 9, 65, 24, 5 };
+                        MergeSort.Sort(arr2, 0, arr2.Length - 1);
+                        MergeSort.PrintArray(arr2);
+                        break;
 
                     default:
                         Console.WriteLine("Enter the valid option!");
@@ -55,5 +61,8 @@
 
 
 
+
+
         
+
     
