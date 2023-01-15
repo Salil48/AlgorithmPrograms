@@ -30,5 +30,6 @@ namespace AlgorithmPrograms
                 Console.WriteLine("Both the strings are not anagrams!");
             }
         }
+
     }
 }
