@@ -6,24 +6,25 @@ using System.Threading.Tasks;
 
 namespace AlgorithmPrograms
 {
-    class InsertionSort
+    class InsertionSort<T> where T : IComparable
     {
-        public void Sort(int[] arr)
+        public void Sort(T[] array)
         {
-            int size = arr.Length;
-            for (int i = 1; i < size; i++)
+            int i, j;
+
+            for (i = 1; i < array.Length; i++)
             {
-                int k = arr[i];
-                int j = i - 1;
-                while (j >= 0 && arr[j] > k)
+                T value = array[i];
+                j = i - 1;
+                while ((j >= 0) && (array[j].CompareTo(value) > 0))
                 {
-                    arr[j + 1] = arr[j];
+                    array[j + 1] = array[j];
                     j = j - 1;
                 }
-                arr[j + 1] = k;
+                array[j + 1] = value;
             }
         }
-        public void PrintArray(int[] arr)
+        public void PrintArray(T[] arr)
         {
             Console.WriteLine("The Sorted array is : ");
             int n = arr.Length;
@@ -33,5 +34,7 @@ namespace AlgorithmPrograms
             }
             Console.Write("\n");
         }
+
+
     }
 }
