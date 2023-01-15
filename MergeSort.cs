@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace AlgorithmPrograms
 {
-    class MergeSort
+    class MergeSort<T> where T : IComparable
     {
-        public static void Merge(int[] arr, int l, int m, int r)
+        public static void Merge(T[] arr, int l, int m, int r)
         {
             int n1 = m - l + 1;
             int n2 = r - m;
-            int[] left = new int[n1];
-            int[] right = new int[n2];
+            T[] left = new T[n1];
+            T[] right = new T[n2];
             int i, j;
             for (i = 0; i < n1; ++i)
             {
@@ -29,7 +29,7 @@ namespace AlgorithmPrograms
             int k = l;
             while (i < n1 && j < n2)
             {
-                if (left[i] <= right[j])
+                if (left[i].CompareTo(right[j]) < 0 || left[i].CompareTo(right[j]) == 0)
                 {
                     arr[k] = left[i];
                     i++;
@@ -55,7 +55,7 @@ namespace AlgorithmPrograms
             }
         }
         //Sorting method
-        public static void Sort(int[] arr, int l, int r)
+        public static void Sort(T[] arr, int l, int r)
         {
             if (l < r)
             {
@@ -66,7 +66,7 @@ namespace AlgorithmPrograms
                 Merge(arr, l, m, r);
             }
         }
-        public static void PrintArray(int[] arr)
+        public static void PrintArray(T[] arr)
         {
             int n = arr.Length;
             for (int i = 0; i < n; ++i)
@@ -74,5 +74,4 @@ namespace AlgorithmPrograms
             Console.WriteLine();
         }
     }
-
 }
