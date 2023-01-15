@@ -33,7 +33,5 @@ namespace AlgorithmPrograms
             }
             Console.Write("\n");
         }
-
-
     }
 }
