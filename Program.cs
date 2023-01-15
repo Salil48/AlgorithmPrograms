@@ -14,6 +14,7 @@
                 Console.WriteLine("3.Insertion Sort");
                 Console.WriteLine("4.Bubble Sort");
                 Console.WriteLine("5.Merge sort");
+                Console.WriteLine("6.Anagram Problem");
                 Console.WriteLine("Enter the option");
                 int num = Convert.ToInt32(Console.ReadLine());
                 switch (num)
@@ -45,6 +46,9 @@
                         int[] arr2 = { 32, 12, 9, 65, 24, 5 };
                         MergeSort.Sort(arr2, 0, arr2.Length - 1);
                         MergeSort.PrintArray(arr2);
+                        break;
+                    case 6:
+                        Anagram.FindAnagram();
                         break;
 
                     default:
