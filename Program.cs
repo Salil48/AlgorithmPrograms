@@ -17,6 +17,7 @@
                 Console.WriteLine("6.Anagram Problem");
                 Console.WriteLine("7.Prime number in range");
                 Console.WriteLine("8.Prime numbers with anagrams and palindrome");
+                Console.WriteLine("9.Think Number using binary search concept");
                 Console.WriteLine("Enter the option");
                 int num = Convert.ToInt32(Console.ReadLine());
                 switch (num)
@@ -29,12 +30,12 @@
                         break;
                     case 2:
                         string txtpath = File.ReadAllText(@"J:\240\AlgorithmPrograms\AlgorithmPrograms\algo.txt");
-                        List<string> words = new List<string>(txtpath.Split(" "));
+                        List<string> words = new List<string>(txtpath.Split());
                         words.Sort();
                         BinarySearch.BinarySearchWord(words);
                         break;
                     case 3:
-                        InsertionSort insertionSort = new InsertionSort();
+                        InsertionSort<int> insertionSort = new InsertionSort<int>();
                         int[] arr = { 10, 2, 14, 3, 1, 5, 9 };
                         insertionSort.Sort(arr);
                         insertionSort.PrintArray(arr);
@@ -83,6 +84,9 @@
                         {
                             Console.WriteLine("Number is not a palindrome");
                         }
+                        break;
+                    case 9:
+                        GuessNumber.ThinkNumber();
                         break;
 
                     default:
