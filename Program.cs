@@ -3,7 +3,7 @@
     class Program
     {
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Algorithm Programs!");
             string flag = "Y";
@@ -14,6 +14,7 @@
                 Console.WriteLine("3.Insertion Sort");
                 Console.WriteLine("4.Bubble Sort");
                 Console.WriteLine("5.Merge sort");
+                Console.WriteLine("6.Anagram Problem");
                 Console.WriteLine("Enter the option");
                 int num = Convert.ToInt32(Console.ReadLine());
                 switch (num)
@@ -46,6 +47,9 @@
                         MergeSort.Sort(arr2, 0, arr2.Length - 1);
                         MergeSort.PrintArray(arr2);
                         break;
+                    case 6:
+                        Anagram.FindAnagram();
+                        break;
 
                     default:
                         Console.WriteLine("Enter the valid option!");
@@ -57,12 +61,3 @@
         }
     }
 }
-
-
-
-
-
-
-        
-
-    
