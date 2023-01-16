@@ -9,13 +9,13 @@ namespace AlgorithmPrograms
 {
     class MessageDemoUsingRegex
     {
-        static string sentence = "Hello <<name>>, We have your full name as <<Name1>> in our system.your contact number is 91 - xxxxxxxxxx.Please, let us know in case of any clarification Thank you BridgeLabz 01/01/2016.";
+        static string sentence = "Hello <<name>>, We have your full name as <<Name1>> in our system.your contact number is 91 - xxxxxxxxxx.Please, let us know in case of any clarification Thank you BridgeLabz 15/01/2023.";
         public static void DisplayMessage()
         {
             string namePattern = "^[<]*name[>]*";
             string fullNamePattern = "[<]*Name1[>]*";
             string numPattern = "[x]{10}";
-            string dateTimePattern = "^[01]+[/]+[01]+[/]+[2016]";
+            string dateTimePattern = "^[15]+[/]+[01]+[/]+[2023]";
             Regex regexname = new Regex(namePattern);
             Regex regexfullName = new Regex(fullNamePattern);
             Regex numberpattern = new Regex(numPattern);
@@ -41,10 +41,10 @@ namespace AlgorithmPrograms
                 string phone = Console.ReadLine();
                 sentence = sentence.Replace("xxxxxxxxxx", phone);
             }
-            if (dateTime.IsMatch("01/01/2016"))
+            if (dateTime.IsMatch("15/01/2023"))
             {
                 string date = DateTime.Now.ToString("MM/dd/yyyy");
-                sentence = sentence.Replace("01/01/2016", date);
+                sentence = sentence.Replace("15/01/2023", date);
 
             }
             Console.WriteLine(sentence + " ");
